@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp unit:test",
-    "build": "gulp build"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,14 @@
     "gulp-concat": "2.6.0",
     "gulp-sass": "2.3.2",
     "gulp-uglify": "2.0.0",
+    "gulp-util": "^3.0.7",
     "jasmine-core": "2.5.1",
     "karma": "1.2.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-jasmine": "1.0.2",
     "karma-phantomjs-launcher": "1.0.2",
     "karma-spec-reporter": "0.0.26",
-    "phantomjs-prebuilt": "2.1.12"
+    "phantomjs-prebuilt": "2.1.12",
+    "rimraf": "^2.5.4"
   }
 }
