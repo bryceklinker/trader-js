@@ -1,0 +1,19 @@
+{
+  "name": "trader-js",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryceklinker/trader-js.git"
+  },
+  "author": "Bryce Klinker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryceklinker/trader-js/issues"
+  },
+  "homepage": "https://github.com/bryceklinker/trader-js#readme"
+}
