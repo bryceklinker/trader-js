@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/bryceklinker/trader-js/issues"
   },
-  "homepage": "https://github.com/bryceklinker/trader-js#readme"
+  "homepage": "https://github.com/bryceklinker/trader-js#readme",
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "gulp": "^3.9.1",
+    "jasmine-core": "^2.5.1",
+    "karma": "^1.2.0",
+    "karma-jasmine": "^1.0.2"
+  }
 }
