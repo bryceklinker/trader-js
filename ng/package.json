@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "start":"webpack-dev-server --config ./webpack.config.js --colors --progress --inline --hot",
+    "build": "webpack --config ./webpack.prod.js --colors --progress"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,10 @@
     "angular-ui-router": "^0.3.1"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.8",
     "css-loader": "^0.25.0",
     "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
     "jasmine-core": "^2.5.1",
     "karma": "^1.2.0",
     "karma-jasmine": "^1.0.2",
