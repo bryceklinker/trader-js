@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand btn btn-link" (click)="navigate('/welcome')">Your App Name</a>
+    </div>
+    
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+            <a class="btn btn-link" (click)="navigate('/get-started')" >Get Started</a>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="container-fluid" >
+    <router-outlet></router-outlet>
+</div>

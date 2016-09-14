@@ -1,0 +1,39 @@
+<h4>End-to-End Testing</h4>
+
+<p>
+    End-to-End tests can be run using:
+    <br /><br />
+
+    <code>npm run e2e</code>
+    <br /><br />
+</p>
+
+<h5>What does npm run e2e do?</h5>
+<p>
+    This will run protractor against your application. We configure protractor using protractor.conf.js. This configuration
+    tells protractor the url of your application, starts your application, and bundles your application. 
+</p>
+
+<h5>What is in protractor.conf.js?</h5>
+<p>
+    The base url for your application will be http://localhost:4000 for the end-to-end tests. This is different from when the application
+    is run on its own. You can change this port if you change the port you pass to the Application constructor in the protractor.conf.js file.
+    If your application requires backend processes or other services to be running for your application you can use the start method in the 
+    e2e/application.ts file to hook in your required services and processes. You could also hook into the protractor configuration's 
+    beforeLaunch, onPrepare, afterLaunch or onCleanup methods. Keep in mind that you will likely want to ensure your application has finished
+    starting before you allow protractor to begin its tests.
+</p>
+
+<h5>What is in e2e/application.ts?</h5>
+<p>
+    This class is responsible for starting and stopping your application. It uses a node module called deasync. This module allows us to 
+    run asynchronous javascript code synchronously. This can be especially helpful if you want to delay exiting a function because your 
+    processing isn't finished yet. In the case of protractor we want to make sure our dev server is running and our application has been bundled. 
+    deasync is perfect for this task. If there is a need for more things to be started then adding them in can be done. 
+</p>
+
+<h5>What dev server are we using?</h5>
+<p>
+    The dev server used in this starter is the webpack dev server. This one is nice because it integrates seamlessly with webpack. The webpack
+    dev server also has the advantage of not requiring us to write all of the bundled application to disk. 
+</p>

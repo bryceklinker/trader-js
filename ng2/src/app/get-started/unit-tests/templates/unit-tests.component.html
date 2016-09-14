@@ -1,0 +1,49 @@
+<h4>Running Unit Tests</h4>
+
+<p>
+    Unit tests can be run using 
+    <br /><br />
+
+    <code>npm test</code>
+    <br /><br />
+</p>
+
+<h5>What does npm test do?</h5>
+<p>
+    This will run karma (the test runner) using the configuration found in karma.conf.js. 
+</p>
+
+<h5>What does karma.conf.js do?</h5>
+<p>
+    The base of this file is generated using the karma-cli which can be found on npm. 
+    The one included here tells karma to run tests inside of the phantomjs browser, preprocess test-setup.ts using webpack, 
+    report results of tests using the spec reporter, and to watch for file changes. 
+</p>
+
+<h5>What is phantomjs?</h5>
+<p>
+    Phantomjs is a headless web browser commonly used for running tests against javascript code. A headless browser means
+    there is no visible window. Think of it as a web browser that you don't actually see. It just starts a process
+    then runs your site like it was viewed through chrome, or some other browser. Why would we use Phantom? The short answer is 
+    speed. Phantomjs will run our tests faster than other browsers. For the most part PhantomJs mimics real browsers well enough
+    that we can use it. It is also nice for running javascript unit tests on CI servers because there is no need to launch and interact
+    with a real browser window. 
+</p>
+
+<h5>What does preprocess test-setup mean?</h5>
+<p>
+    Preprocessing our typescript is neccessary for a few reasons. The first reason is that browsers don't understand typescript. You could 
+    load typescript into a browser, but the browser won't know what to do with it because its not always valid javascript. The other reason
+    we need to preprocess our typescript is because we are taking advantage of node for loading packages, other javascript libraries, and 
+    our own components. Browsers don't understand what import '@angular/core' means. Webpack (our preprocessor)
+    knows how to turn that typescript in to javascript that will work in the browser. That is the job of the preprocessor. It takes our 
+    typescript and translates it into something the browser can understand and run. This is neccessary because at the end of the day
+    if our application doesn't run in a browser we kind of failed. Our preprocessor is configured using webpack.test.js. 
+</p>
+
+<h5>What does webpack.test.js do?</h5>
+<p>
+    In short wepback.test.js creates the webpack configuration we use for preproccessing our application for testing purposes. When testing we
+    don't need to provide an entry point or minify or uglify our application code. This helps speed up preprocessing. The entry point for the
+    application becomes the files marked with webpack as the preprocessor. In our case the entry point is our src/test-setup.ts file.
+</p>

@@ -1,0 +1,27 @@
+<nav class="sub-navbar navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+            <a class="btn btn-link" routerLink="/get-started/whats-included">What's Included</a>
+        </li>
+        <li routerLinkActive="active">
+            <a class="btn btn-link" routerLink="/get-started/unit-tests">Unit Tests</a>
+        </li>
+        <li routerLinkActive="active">
+            <a class="btn btn-link" routerLink="/get-started/end-to-end">End-to-End</a>
+        </li>
+        <li routerLinkActive="active">
+            <a class="btn btn-link"  routerLink="/get-started/bundling">Bundling</a>
+        </li>
+        <li routerLinkActive="active">
+            <a class="btn btn-link"  routerLink="/get-started/start">Start</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

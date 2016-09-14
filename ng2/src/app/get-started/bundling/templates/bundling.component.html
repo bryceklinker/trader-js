@@ -1,0 +1,45 @@
+<h4>Bundling</h4>
+<p>
+    Your application can be bundled using:
+    <br /><br />
+
+    <code>npm run build</code>
+    <br /><br />
+
+    This will bundle your application using webpack. This will bundle your application using the webpack.prod.js configuration.
+</p>
+
+<h5>What does webpack do?</h5>
+<p>
+    Webpack will turn your typescript code into code that will work in the browser. This requires help from many different webpack plugins and 
+    loaders. Each loader is matched using a regular expression based on the file name and/or extension. For example, we use ts-loader
+    to convert our typescript into javascript. The webpack configuration tells all .ts files to be run through the ts-loader. Webpack will also
+    turn code that was written relying on node into code that doesn't rely on node.  
+</p>
+
+<h5>How do we know what code relies on node?</h5>
+<p>
+    This is actually pretty simple to figure out. Any code that has an import or require statement is utilizing node's package system. 
+    The reason this needs to be converted into browser code is because the browser doesn't have access to our file system. What webpack will do
+    is replace calls to require or import (which get translated into require statements anyway) into a call to a function webpack defines. This
+    function is based on integers instead of strings but it accomplishes the approxiamately the samething as node's require function.  
+</p>
+
+<h5>How does webpack know what to include in your bundle?</h5>
+<p>
+    In the configuration for webpack you specify one or more entry points to your application. In the case of this starter there are two
+    entry points. The first is src/vendor.ts this file contains third-party libraries that are required for the application. This file includes
+    the Angular 2 libraries and bootstrap as well. This can help when deployed to a production environment as the third-party libraries can
+    be cached while the other bundle can be reduced in size. The second entry for your application is src/main.ts. This entry point is the
+    point that will include all of your application specific code. Webpack will use these entry points to bundle up all of the code required
+    for your application to run in the browser. 
+</p>
+
+<h5>Webpack Configuration</h5>
+<p>
+    The configuration of webpack for this starter is done mostly in the webpack.make.js file. This file exports a function that takes
+    an environment variable that is used to configure webpack according to where the code will be going. When bundled for production your code
+    will be minified and ugilified. However, when bundled for tests or locally uglification will not be performed. The current make will also
+    copy config.prod.json or config.local.json depending on the environment variable. The purpose of this is so that your application can be 
+    configured to change api end-points, settings, etc. depending on environment. 
+</p>

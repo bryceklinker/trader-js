@@ -1,0 +1,14 @@
+{
+  "name": "enter-app-name",
+  "dependencies": {
+    "webpack": "registry:npm/webpack#1.12.9+20160418172948"
+  },
+  "globalDependencies": {
+    "angular-protractor": "registry:dt/angular-protractor#1.5.0+20160425143459",
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+    "html-webpack-plugin": "registry:dt/html-webpack-plugin#2.22.2+20160802151720",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "node": "registry:dt/node#6.0.0+20160909174046",
+    "selenium-webdriver": "registry:dt/selenium-webdriver#2.44.0+20160317120654"
+  }
+}
